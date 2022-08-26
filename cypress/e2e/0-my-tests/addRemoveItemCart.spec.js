@@ -15,11 +15,11 @@ describe('Cart Test Suite', function(){
         cy.logout()
     })
 
-    it.only('Verify Number at Cart Icon', function(){
+    it('Verify Number at Cart Icon', function(){
         HomePage.getInventoryItem4Button().click()
         HomePage.getShoppingCartNumber().should('be.visible').and('have.text', '1')
         HomePage.getInventoryItem4RemoveButton().click()
-        HomePage.getShoppingCart().children().should('have.length', 1);
+        HomePage.getShoppingCart().children().should('have.length', 0);
     })
 
     it('Add to Cart Item - Verify Product Info - Go Back', function(){
